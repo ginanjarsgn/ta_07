@@ -27,7 +27,7 @@
 
             <div class="panel panel-default">
 
-                <div class="panel-heading">Posts</div>
+                <div class="panel-heading"style="font-size: 20px; color: black;">Daftar Rating</div>
                 <ul>
                             <li >
                                 <a href="/destination" style="font-size: 20px;">Kembali</a>

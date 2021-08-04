@@ -87,35 +87,53 @@ class RateController extends Controller
 
         request()->validate([
             'rate_fasilitas' => 'required',
-            'rate_akses' => 'required'
+            'rate_akses' => 'required',
+            'rate_pelayanan' => 'required'
+
             
         ]);
 
         $post = Post::find($request->id);
 
-
-
-        $rating = new \willvincent\Rateable\Rating;
         $rating_fasilitas = $request->rate_fasilitas;
         $rating_akses = $request->rate_akses;
-        $post->fasilitas += $rating_fasilitas;
-        $post->akses += $rating_akses;
-        $post->jumlah_vote += 1;
-        $rate = (float)($rating_fasilitas + $rating_akses )/2;
-        $rating->rating = $rate;
+        $rating_pelayanan = $request->rate_pelayanan;
+        
+        $rate = (float)($rating_fasilitas + $rating_akses+ $rating_pelayanan )/3;
+        if (\willvincent\Rateable\Rating::where("rateable_id", '=', $post->id)->where("user_id", "=", auth()->user()->id)->exists()) {
+            $rating = \willvincent\Rateable\Rating::where("rateable_id", '=', $post->id)->where("user_id", "=", auth()->user()->id)->first();
+            $rating->rating = $rate;
+            $rating->save();
+        }else{
+            $rating = new \willvincent\Rateable\Rating;
+            $post->fasilitas += $rating_fasilitas;
+            $post->akses += $rating_akses;
+            $post->pelayanan += $rating_pelayanan;
+            $rating->rating = $rate;
+            $rating->user_id = auth()->user()->id;
+            $post->jumlah_vote += 1;
+            $post->ratings()->save($rating);
+            $post->save();
+        }
+
         // $rating->rating_fasilitas = $rating_fasilitas;
         // $rating->rating_akses = $rating_akses;
         // $rating->rating_tempat = $rating_tempat;
 
-        $rating->user_id = auth()->user()->id;
 
+        // $wisata = $request->id;
+        $jenis = $post->jenis;
+        if ($jenis == "wisata") {
+            return redirect("/destination1/".$request->id2);
+        }else if ($jenis == "kuliner") {
+            return redirect("/kuliner1/".$request->id2);
+        }else if ($jenis == "toko") {
+            return redirect("/cinderamata1/".$request->id2);
+        }else if ($jenis == "akomodasi") {
+            return redirect("/akomodasiku1/".$request->id2);
+        }
 
-        $post->ratings()->save($rating);
-        $post->save();
-
-
-        $wisata = $request->id;
-        return redirect()->route("posts", ['wisata' => $wisata]);
+        // return redirect()->route("posts", ['wisata' => $wisata]);
 
     }
     public function tampilkan(Post $post, Wisata $wisata)

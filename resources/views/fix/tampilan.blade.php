@@ -6,6 +6,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
+ <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+ 
+
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet"> 
+ <link rel="stylesheet" href="{{ asset('gaya/assets/css/main.css') }}">
+
+   
+
+    <!-- ICONS -->
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('gaya/assets/img/apple-icon.png') }}">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/js/star-rating.min.js"></script>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+<link href="{{ asset('css/preview.css') }}" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/vendor/bootstrap/css/bootstrap.min.css') }}">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/fonts/iconic/css/material-design-iconic-font.min.css') }}" >
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/fonts/linearicons-v1.0.0/icon-font.min.css') }}">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/vendor/animate/animate.css') }}">
+<!--===============================================================================================-->  
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/vendor/css-hamburgers/hamburgers.min.css') }}">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/vendor/animsition/css/animsition.min.css') }}">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/vendor/select2/select2.min.css') }}">
+<!--===============================================================================================-->  
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/vendor/daterangepicker/daterangepicker.css') }}">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/vendor/slick/slick.css') }}">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/vendor/MagnificPopup/magnific-popup.css') }}">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/vendor/perfect-scrollbar/perfect-scrollbar.css') }}">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/css/util.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('gaya/assets/vendor/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('gaya/assets/vendor/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('gaya/assets/vendor/linearicons/style.css') }}">
@@ -62,7 +114,7 @@
         <div class="container-menu-desktop">
             <!-- Topbar -->
            
-            <div class="wrap-menu-desktop">
+            <div class="wrap-menu-desktop" >
                 <nav class="limiter-menu-desktop container">
            
                     <!-- Logo desktop -->       
@@ -78,9 +130,7 @@
                                 <a href="/" style="font-size: 20px;">Home</a>
                                
                             </li>
-                             <li>
-                                <a href="/forum" style="color:black;font-size: 20px;">Forum</a>
-                            </li>
+                            
                             <li class="nav-item dropdown">
                                  <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle" style="color:black;font-size: 20px;">Destinasi</a>
                                  <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
@@ -100,9 +150,7 @@
                                 <a href="/akomodasiku" style="color:black;font-size: 20px;">Penginapan</a>
                             </li>
 
-                            <li>
-                                <a href="/info" style="color:black;font-size: 20px;">Info</a>
-                            </li>
+                         
                              </ul>
                             </li>
                             
@@ -113,7 +161,7 @@
                           @endif
      @if(auth()->user())
                             <li>
-    <a href="{{url('/logout')}}" style="color:black;font-size: 20px; class="nav-link">
+  <a href="{{url('/logout')}}" style="color:black;font-size: 20px; class="nav-link">
       Logout</a>     
       
       </li>
@@ -221,20 +269,34 @@
         </div>
     </section>
 
+<section>
  <div class="content-wrapper">
     <!-- Main content -->
-   
+        <br>
+        <br>
+        <br>
+        
       
-        <div class="container ">
+        <div class="container">
           @yield('container')
+          
+         
         </div>
         <!-- ./col -->
         
   </div>
+</section>
 
-
-    <!-- Footer -->
-    
+    <p class="footer" style=" 
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #c4c4c4;
+  color: black;
+  text-align: center;">
+    @copyright 2021 || by TA-D3TI-Group 07      
+     </p>
 
 
     <!-- Back to top -->
@@ -244,7 +306,7 @@
         </span>
     </div>
 
-   
+  
 
 <!--===============================================================================================-->  
     <script src="{{ asset('style/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
@@ -364,6 +426,107 @@
         <script src="{{ asset('gaya/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js') }}"></script>
         <script src="{{ asset('gaya/assets/vendor/chartist/js/chartist.min.js') }}"></script>
         <script src="{{ asset('gaya/assets/scripts/klorofil-common.js') }}"></script>
+        <script src="{{ asset('style/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+<!--===============================================================================================-->
+    <script src="{{ asset('style/vendor/animsition/js/animsition.min.js') }}"></script>
+<!--===============================================================================================-->
+    <script src="{{ asset('style/vendor/bootstrap/js/popper.js') }}"></script>
+    <script src="{{ asset('style/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<!--===============================================================================================-->
+    <script src="{{ asset('style/vendor/select2/select2.min.js') }}"></script>
+    <script>
+        $(".js-select2").each(function(){
+            $(this).select2({
+                minimumResultsForSearch: 20,
+                dropdownParent: $(this).next('.dropDownSelect2')
+            });
+        })
+    </script>
+<!--===============================================================================================-->
+    <script src="{{ asset('style/vendor/daterangepicker/moment.min.js') }}"></script>
+    <script src="{{ asset('style/vendor/daterangepicker/daterangepicker.js') }}"></script>
+<!--===============================================================================================-->
+    <script src="{{ asset('style/vendor/slick/slick.min.js') }}"></script>
+    <script src="{{ asset('style/js/slick-custom.js') }}"></script>
+<!--===============================================================================================-->
+    <script src="{{ asset('style/vendor/parallax100/parallax100.js') }}"></script>
+    <script>
+        $('.parallax100').parallax100();
+    </script>
+<!--===============================================================================================-->
+    <script src="{{ asset('style/vendor/MagnificPopup/jquery.magnific-popup.min.js') }}"></script>
+    <script>
+        $('.gallery-lb').each(function() { // the containers for all your galleries
+            $(this).magnificPopup({
+                delegate: 'a', // the selector for gallery item
+                type: 'image',
+                gallery: {
+                    enabled:true
+                },
+                mainClass: 'mfp-fade'
+            });
+        });
+    </script>
+<!--===============================================================================================-->
+    <script src="{{ asset('style/vendor/isotope/isotope.pkgd.min.js') }}"></script>
+<!--===============================================================================================-->
+    <script src="{{ asset('style/vendor/sweetalert/sweetalert.min.js') }}"></script>
+    <script>
+        $('.js-addwish-b2').on('click', function(e){
+            e.preventDefault();
+        });
+
+        $('.js-addwish-b2').each(function(){
+            var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+            $(this).on('click', function(){
+                swal(nameProduct, "is added to wishlist !", "success");
+
+                $(this).addClass('js-addedwish-b2');
+                $(this).off('click');
+            });
+        });
+
+        $('.js-addwish-detail').each(function(){
+            var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
+
+            $(this).on('click', function(){
+                swal(nameProduct, "is added to wishlist !", "success");
+
+                $(this).addClass('js-addedwish-detail');
+                $(this).off('click');
+            });
+        });
+
+        /*---------------------------------------------*/
+
+        $('.js-addcart-detail').each(function(){
+            var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+            $(this).on('click', function(){
+                swal(nameProduct, "is added to cart !", "success");
+            });
+        });
+    
+    </script>
+<!--===============================================================================================-->
+    <script src="{{ asset('style/vendor/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+    <script>
+        $('.js-pscroll').each(function(){
+            $(this).css('position','relative');
+            $(this).css('overflow','hidden');
+            var ps = new PerfectScrollbar(this, {
+                wheelSpeed: 1,
+                scrollingThreshold: 1000,
+                wheelPropagation: false,
+            });
+
+            $(window).on('resize', function(){
+                ps.update();
+            })
+        });
+    </script>
+<!--===============================================================================================-->
+    <script src="{{ asset('style/js/main.js') }}"></script>
+
 
 </body>
 </html>

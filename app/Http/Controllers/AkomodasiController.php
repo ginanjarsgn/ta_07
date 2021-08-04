@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Akomodasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Post;
+use App\Http\Controllers\UserController;
 
 
 class AkomodasiController extends Controller
@@ -49,6 +51,11 @@ class AkomodasiController extends Controller
         $tambah->deskripsi = $request->deskripsi;
         $tambah->gambar = $namaGambar;
         $tambah->save();
+
+        $post = new Post;
+        $post->name = $request->nama_akomodasi;
+        $post->jenis = "akomodasi";
+        $post->save();
 
         return redirect('/akomodasi')->with('status','Data Akomodasi Berhasil Ditambahkan!');
     }

@@ -14,8 +14,18 @@ class InfoController extends Controller
         /*$wisata = DB::table('wisatas')->get();*/
 
         $informasi=\App\Models\Informasi::all();
+        $data = array();
+        foreach ($informasi as $coba) {
+            array_push($data, array(
+                'id_pengumuman' => $coba->id_pengumuman,
+                'nama_pengumuman' => $coba->nama_pengumuman,
+                'deskripsi' => $coba->deskripsi,
+                'gambar' => $coba->gambar
+                
+            ));
+        }
        
-        return view ('info',['informasi'=>$informasi]);
+        return view ('welcome',compact('informasi'),compact('data'));
     }
     public function show(Informasi $informasi)
     {

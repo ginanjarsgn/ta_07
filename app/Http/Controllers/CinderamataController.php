@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Cinderamata;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Post;
+use App\Http\Controllers\UserController;
 
 class CinderamataController extends Controller
 {
@@ -48,6 +50,11 @@ class CinderamataController extends Controller
         $tambah->deskripsi = $request->deskripsi;
         $tambah->gambar = $namaGambar;
         $tambah->save();
+
+        $post = new Post;
+        $post->name = $request->nama_toko;
+        $post->jenis = "toko";
+        $post->save();
 
         return redirect('/cinderamata')->with('status','Data Cinderamata Berhasil Ditambahkan!');
     }

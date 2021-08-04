@@ -35,9 +35,9 @@ Route::get('/akomodasiku', function () {
     return view('akomodasiku');
 });
 
-Route::get('/info', function () {
+/*Route::get('/info', function () {
     return view('info');
-});
+});*/
 Route::get('/login2', function () {
     return view('login2');
 });
@@ -130,7 +130,7 @@ Route::get('posts/{id}', 'App\Http\Controllers\RateController@show')->name('post
 
 Route::get('/kulinerku', 'App\Http\Controllers\KulinerkuController@index');
 Route::get('/cinderamataku', 'App\Http\Controllers\CinderamatakuController@index');
-Route::get('/info', 'App\Http\Controllers\InfoController@index');
+Route::get('/', 'App\Http\Controllers\InfoController@index');
 Route::get('/akomodasiku', 'App\Http\Controllers\AkomodasikuController@index');
 Route::get('/destination', 'App\Http\Controllers\DestinationController@index');
 Route::get('/destination1/{wisata}', 'App\Http\Controllers\DestinationController@show');
@@ -163,3 +163,5 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('/informasi', 'App\Http\Controllers\InformasiController@index');
     });
 });
+
+Route::get('/bla123', 'App\Http\Controllers\CobaController@coba');

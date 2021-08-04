@@ -62,7 +62,7 @@
                             </li>
 
                             <li >
-                                <a href="/destination" style="color:black;font-size: 20px;">Destinasi</a>
+                                <a href="/destination" style="color:black;font-size: 20px;">Wisata</a>
                             </li>
 
                             <li >
@@ -74,12 +74,10 @@
                             </li>
 
                             <li class="active-menu">
-                                <a href="/akomodasiku" style="color:black;font-size: 20px;">Akomodasi</a>
+                                <a href="/akomodasiku" style="color:black;font-size: 20px;">Penginapan</a>
                             </li>
 
-                            <li>
-                                <a href="/info" style="color:black;font-size: 20px;">Info</a>
-                            </li>
+                          
                             @if(auth()->user()) 
                             <li>
     <a href="{{url('/logout')}}" style="color:black;font-size: 20px; class="nav-link">

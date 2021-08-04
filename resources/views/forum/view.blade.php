@@ -8,13 +8,15 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="panel-heading">
-    	<h3 class="product-title" style="color:black;font-size: 20px;">Diskusi</h3>
+    	<h3 class="product-title" style="color:black;font-size: 20px;">Komentar</h3>
     	
     </div>
    <div class="col-md-8">
       <!-- PANEL HEADLINE -->
       <div class="panel panel-headline">
         <div class="panel-heading">
+          
+          <h3 class="panel-title" style="color:#0088ff;">{{$forum[0]->user->name}}</h3>
           <h3 class="panel-title">{{$forum[0]->judul}}</h3>
           <p class="panel-subtitle">{{$forum[0]->created_at->diffForHumans()}}</p>
         </div>

@@ -6,13 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
-    <link rel="icon" type="image/png" href="images/icons/favicon.png"/>
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('style/vendor/bootstrap/css/bootstrap.min.css') }}">
-
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet"> 
+ <link rel="stylesheet" href="{{ asset('gaya/assets/css/main.css') }}">
+
+   
+
+    <!-- ICONS -->
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('gaya/assets/img/apple-icon.png') }}">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css" />
 
@@ -25,9 +27,12 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 
 <link href="{{ asset('css/preview.css') }}" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/vendor/bootstrap/css/bootstrap.min.css') }}">
 <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('style/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
-
 <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('style/fonts/iconic/css/material-design-iconic-font.min.css') }}" >
 <!--===============================================================================================-->
@@ -48,12 +53,15 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('style/vendor/MagnificPopup/magnific-popup.css') }}">
 <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('style/vendor/perfect-scrollbar/perfect-scrollbar.css') }}">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/js/star-rating.min.js"></script>
 <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('style/css/util.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('style/css/main.css') }}">
 <!--===============================================================================================-->
+<style>
+.checked {
+  color: orange;
+}
+</style>
 </head>
 <body class="animsition">
     
@@ -81,7 +89,7 @@
                             </li>
 
                             <li >
-                                <a href="/destination" style="color:black;font-size: 20px;">Destinasi</a>
+                                <a href="/destination" style="color:black;font-size: 20px;">Wisata</a>
                             </li>
 
                             <li class="active-menu">
@@ -93,12 +101,10 @@
                             </li>
 
                             <li>
-                                <a href="/akomodasiku" style="color:black;font-size: 20px;">Akomodasi</a>
+                                <a href="/akomodasiku" style="color:black;font-size: 20px;">Penginapan</a>
                             </li>
 
-                            <li>
-                                <a href="/info" style="color:black;font-size: 20px;">Info</a>
-                            </li>
+                           
                             @if(auth()->user()) 
                             <li>
     <a href="{{url('/logout')}}" style="color:black;font-size: 20px; class="nav-link">
@@ -159,7 +165,7 @@
                 
                 <div class="order-md-2 col-md-7 col-lg-8 p-b-30">
                     <div class="p-t-7 p-l-85 p-l-15-lg p-l-0-md">
-                        <h3 class="mtext-111 cl2 p-b-16">
+                        <h3 class="mtext-111 cl2 p-b-16"style="font-family:fantasy; color: black;font-size: 22px;">
                               {{$kuliner->nama_kuliner}}
                         </h3>
 
@@ -168,13 +174,11 @@
 
                           
 
-                            <p class="stext-117 cl6 p-b-26">
+                            <p class="stext-117 cl6 p-b-26"style="font-family:cursive; color: black;font-size: 18px;">
                                 {{$kuliner->deskripsi}}
                             </p>
 
-                            <p class="stext-117 cl6 p-b-26">
-                                Praesent vel mi bibendum, finibus leo ac, condimentum arcu. Pellentesque sem ex, tristique sit amet suscipit in, mattis imperdiet enim. Integer tempus justo nec velit fringilla, eget eleifend neque blandit. Sed tempor magna sed congue auctor. Mauris eu turpis eget tortor ultricies elementum. Phasellus vel placerat orci, a venenatis justo. Phasellus faucibus venenatis nisl vitae vestibulum. Praesent id nibh arcu. Vivamus sagittis accumsan felis, quis vulputate
-                            </p>
+                            
 
                         </div>
 
@@ -204,12 +208,108 @@
 <br>
 <br>
 <br>
- <form action="{{ route('posts.post') }}" method="POST">
+  <form action="{{ route('posts.post') }}" method="POST">
 
                         {{ csrf_field() }}
 
                     <div class="card">
+                            <div class="row">                           
+                           <div class="col-sm-4"><b class="product-title" style="color:blue;">Akses</b>
 
+                            <div class="block2-txt flex-w flex-t p-t-14">
+
+                                    <div class="block2-txt-child1 flex-col-l ">
+                                        <br>
+                                        
+                                        <b style="color: black;">1. Mudah dilalui kendaraan</b>
+                                        <b style="color: black;">2. Bebas dari banjir</b>
+                                        <b style="color: black;">3. Bebas dari polusi dan udara</b>
+                                        <b style="color: black;">4. Biaya tiket masuk terjangkau</b>
+                                        <b style="color: black;">5. Memiliki prasarana seperti jalan, jembatan, terminal dan stasiun</b>
+                                    </div>
+                            </div>
+
+                                </div>
+                            <div class="col-sm-4"><b class="product-title" style="color:blue;">Fasilitas</b>  
+                            <div class="block2-txt flex-w flex-t p-t-14">
+                                
+                                    <div class="block2-txt-child1 flex-col-l ">
+                                        <br>
+                                        
+                                       
+                                        <b style="color: black;">1. Memiliki toilet yang bersih dan wangi</b>
+                                        <b style="color: black;">2. Memiliki tempat santai yang nyaman</b>
+                                        <b style="color: black;">3. Memiliki tempat parkir yang memadai</b>
+                                        <b style="color: black;">4. Memiliki lahan terbuka</b>
+                                        <b style="color: black;">5. Memiliki fasilitas rekreasi hiburan</b>
+                                    </div>
+                            </div>
+                         
+                                </div>
+                                
+                            
+                                 <div class="col-sm-4"><b class="product-title" style="color:blue;">Pelayanan</b>
+                               <div class="block2-txt flex-w flex-t p-t-14">
+                                  <div class="block2-txt-child1 flex-col-l ">
+                                        <br>
+                                        
+                                        <b style="color: black;">1. Pelayanan yang cepat dan tanggap</b>
+                                        <b style="color: black;">2. Memiliki etika dan menjaga kesopanan</b>
+                                        <b style="color: black;">3. Mengakui kesalahan saat memberikan pelayanan</b>
+                                        <b style="color: black;">4. Memiliki kesabaran dalam memberikan pelayanan</b>
+                                        <b style="color: black;">5. Menjaga kebersihan diri</b>
+                                    </div>
+                                </div>
+                                
+                                </div>
+                                </div>
+                               
+                                <br>
+                                <br>  
+                                
+                                    <div class="block2-txt-child1 flex-col-l ">
+                                        <a>
+                                        <span class="fa fa-star checked">&nbsp<b style="color: black;">Memenuhi satu point</b></span>
+                                        </a>
+
+                                    </div>
+                               
+                                
+                                    <div class="block2-txt-child1 flex-col-l ">
+                                        <a>
+                                        <span class="fa fa-star checked">
+                                        <span class="fa fa-star checked"></span>&nbsp<b style="color: black;">Memenuhi dua point</b></span>
+                                        </a>
+
+                                    </div>
+                                     <div class="block2-txt-child1 flex-col-l ">
+                                        <a>
+                                        <span class="fa fa-star checked">
+                                        <span class="fa fa-star checked">
+                                        <span class="fa fa-star checked"></span>&nbsp<b style="color: black;">Memenuhi tiga point</b></span>
+                                        </a>
+
+                                    </div>
+                                    <div class="block2-txt-child1 flex-col-l ">
+                                        <a>
+                                        <span class="fa fa-star checked">
+                                        <span class="fa fa-star checked">
+                                        <span class="fa fa-star checked">
+                                        <span class="fa fa-star checked"></span>&nbsp<b style="color: black;">Memenuhi empat point</b></span>
+                                        </a>
+
+                                    </div>
+                                    <div class="block2-txt-child1 flex-col-l ">
+                                        <a>
+                                        <span class="fa fa-star checked">
+                                        <span class="fa fa-star checked">
+                                        <span class="fa fa-star checked">
+                                        <span class="fa fa-star checked"></span>&nbsp<b style="color: black;">Memenuhi lima point</b></span>
+                                        </a>
+
+                                    </div> 
+                                <br>
+                                <br>
                         <div class="container-fliud">
 
                             <div class="wrapper row">
@@ -221,12 +321,27 @@
                                     <h4 class="product-title" style="color: black;">Berikan Rating</h4>
 
                                     <div class="rating">
-                                        <b style="color: blue;">Akses</b>                    
-                                        <input id="input-1" name="rate_fasilitas" class="rating rating-loading" data-min="0" data-max="5" data-step="1" data-size="xs">
+                                                            
+                                        
 
                                         <input type="hidden" name="id" required="" value="{{ $post->id }}">
+                                        <input type="hidden" name="id2" value="{{$kuliner->id_kuliner}}">
+                                        
+                                        @if($post->jumlah_vote != 0)
+                                        <b style="color: blue;">Akses</b>
+                                        <input id="input-1" name="rate_fasilitas" class="rating rating-loading" data-min="0" data-max="5" data-step="1" data-size="xs"value="{{(float)$post->akses / $post->jumlah_vote}}">
                                         <b style="color: blue;">Fasilitas</b>
+                                        <input id="input-1" name="rate_akses" class="rating rating-loading" data-min="0" data-max="5" data-step="1" data-size="xs" value="{{(float)$post->fasilitas / $post->jumlah_vote}}">
+                                        <b style="color: blue;">Pelayanan</b>
+                                        <input id="input-1" name="rate_pelayanan" class="rating rating-loading" data-min="0" data-max="5" data-step="1" data-size="xs" value="{{(float)$post->pelayanan / $post->jumlah_vote}}">
+                                        @else
+                                        <b style="color: blue;">Akses</b>
                                         <input id="input-1" name="rate_akses" class="rating rating-loading" data-min="0" data-max="5" data-step="1" data-size="xs">
+                                        <b style="color: blue;">Fasilitas</b>
+                                        <input id="input-1" name="rate_fasilitas" class="rating rating-loading" data-min="0" data-max="5" data-step="1" data-size="xs">
+                                        <b style="color: blue;">Pelayanan</b>
+                                        <input id="input-1" name="rate_pelayanan" class="rating rating-loading" data-min="0" data-max="5" data-step="1" data-size="xs">
+                                        @endif
 
                                         <input type="hidden" name="id" required="" value="{{ $post->id }}">
                                         
@@ -246,14 +361,19 @@
 
                         </div>
 
-                   <div class="right">
-          <a href="/forum/create" class="btn btn-primary my-3">Tambah Komentar</a>
-            </div>
-            <div class="card card-success">
-              <div class="card-header">
-                <h3 class="card-title"style="color:black;font-size: 25px;">Forum Diskusi</h3>
-              </div>
-   <div class="card">
+                    </div>
+
+                    <br>
+                    <br>
+                    <br>
+                    <form>
+                     <div class="card">
+
+                         <h4 class="product-title" style="color: black;">Berikan Komentar</h4>
+                     </div>
+                     <div class="card card-success">
+             
+   
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
   
@@ -266,148 +386,56 @@
         <ul class="list-unstyled activity-list">
             @foreach($forum as $frm)
                                         <li>
-                                            <img src="style/images/userr.jpg" alt="Avatar" class="img-circle pull-left avatar">
+                                            <img src="/style/images/userr.jpg" alt="Avatar" class="img-circle pull-left avatar"> 
                                             <p><a href="/forum/{{$frm->id_forum}}/view">{{$frm->user->name}}</a> {{$frm->judul}} <span class="timestamp">{{$frm->created_at->diffForHumans()}}</span></p>
                                         </li>
             @endforeach                                         
                                     </ul> 
 
       </div>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Tambah Komentar
+</button>
     
   </div>
-  </div>
+ 
 </div>
-                    </div>
-
                     </form>
       
     </div>
+    <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="/forum/create" enctype="multipart/form-data">
+        @csrf
+    <input type="hidden" name="id" value="{{$kuliner->id_kuliner}}">
+  <div class="form-group">
+    <input type="hidden" name="jenis" value="kuliner">
+    <label for="judul">Komentar</label>
+    <textarea class="form-control" name="judul" rows="3" placeholder="Komentar Anda"></textarea>
+   
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Kirim</button>
+</form>
+      </div>
+      
+    </div>
+  </div>
+</div>
 
     </section>  
-
-
-
-
-
-
-
-    <!-- Footer -->
-    <footer class="bg3 p-t-75 p-b-32">
-        <div class="container">
-           <!--  <div class="row">
-                <div class="col-sm-6 col-lg-3 p-b-50">
-                    <h4 class="stext-301 cl0 p-b-30">
-                        Categories
-                    </h4>
-
-                    <ul>
-                        <li class="p-b-10">
-                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Women
-                            </a>
-                        </li>
-
-                        <li class="p-b-10">
-                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Men
-                            </a>
-                        </li>
-
-                        <li class="p-b-10">
-                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Shoes
-                            </a>
-                        </li>
-
-                        <li class="p-b-10">
-                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Watches
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-sm-6 col-lg-3 p-b-50">
-                    <h4 class="stext-301 cl0 p-b-30">
-                        Help
-                    </h4>
-
-                    <ul>
-                        <li class="p-b-10">
-                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Track Order
-                            </a>
-                        </li>
-
-                        <li class="p-b-10">
-                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Returns 
-                            </a>
-                        </li>
-
-                        <li class="p-b-10">
-                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Shipping
-                            </a>
-                        </li>
-
-                        <li class="p-b-10">
-                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                FAQs
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-sm-6 col-lg-3 p-b-50">
-                    <h4 class="stext-301 cl0 p-b-30">
-                        GET IN TOUCH
-                    </h4>
-
-                    <p class="stext-107 cl7 size-201">
-                        Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
-                    </p>
-
-                    <div class="p-t-27">
-                        <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-
-                        <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-                            <i class="fa fa-instagram"></i>
-                        </a>
-
-                        <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-                            <i class="fa fa-pinterest-p"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-lg-3 p-b-50">
-                    <h4 class="stext-301 cl0 p-b-30">
-                        Newsletter
-                    </h4>
-
-                    <form>
-                        <div class="wrap-input1 w-full p-b-4">
-                            <input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
-                            <div class="focus-input1 trans-04"></div>
-                        </div>
-
-                        <div class="p-t-18">
-                            <button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
-                                Subscribe
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div> -->
-
-            
-        </div>
-    </footer>
-
-
     <!-- Back to top -->
     <div class="btn-back-to-top" id="myBtn">
         <span class="symbol-btn-back-to-top">

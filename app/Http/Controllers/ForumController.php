@@ -25,7 +25,7 @@ class ForumController extends Controller
     	$request->request->add(['user_id'=>auth()->user()->id]);
     	$forum = Forum::create($request->all());
     	// /*return redirect*/('/destination1/{{request->id}}')->with('status','Forum Berhasil Ditambahkan!');
-        return redirect()->back()->with('status','Forum Berhasil Ditambahkan!');
+        return redirect()->back()->with('status','Komentar Berhasil Ditambahkan!');
     }
     public function view(int $id_forum)
     {

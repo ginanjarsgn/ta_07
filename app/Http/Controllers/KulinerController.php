@@ -119,6 +119,6 @@ class KulinerController extends Controller
     public function destroy(Kuliner $kuliner)
     {
          Kuliner::destroy($kuliner->id_kuliner);
-        return redirect('/kuliner')->with('status','Data Kuliner Berhasil Dihapus!');
+    return redirect('/kuliner')->with('status','Data Kuliner Berhasil Dihapus!');
     }
 }

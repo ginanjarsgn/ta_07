@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet"> 
@@ -56,7 +57,14 @@
 <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('style/css/util.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('style/css/main.css') }}">
+    <style>
+.checked {
+  color: orange;
+}
+
+</style>
 <!--===============================================================================================-->
+
 </head>
 <body class="animsition" >
     
@@ -99,9 +107,7 @@
                                 <a href="/akomodasiku" style="color:black;font-size: 20px;">Akomodasi</a>
                             </li>
 
-                            <li>
-                                <a href="/info" style="color:black;font-size: 20px;">Info</a>
-                            </li>
+                            
                             @if(auth()->user()) 
                             <li>
     <a href="{{url('/logout')}}" style="color:black;font-size: 20px; class="nav-link">
@@ -162,7 +168,7 @@
                 
                 <div class="order-md-2 col-md-7 col-lg-8 p-b-30">
                     <div class="p-t-7 p-l-85 p-l-15-lg p-l-0-md">
-                        <h3 class="mtext-111 cl2 p-b-16">
+                        <h3 class="mtext-111 cl2 p-b-16" style="font-family:fantasy; color: black;font-size: 22px;">
                               {{$wisata->nama_wisata}}
                         </h3>
 
@@ -171,12 +177,11 @@
 
                           
 
-                            <p class="stext-117 cl6 p-b-26">
+                            <p class="stext-117 cl6 p-b-26" style="font-family:cursive; color: black;font-size: 18px;">
                                 {{$wisata->deskripsi}}
                             </p>
-                             <p class="stext-117 cl6 p-b-26">
-                                Praesent vel mi bibendum, finibus leo ac, condimentum arcu. Pellentesque sem ex, tristique sit amet suscipit in, mattis imperdiet enim. Integer tempus justo nec velit fringilla, eget eleifend neque blandit. Sed tempor magna sed congue auctor. Mauris eu turpis eget tortor ultricies elementum. Phasellus vel placerat orci, a venenatis justo. Phasellus faucibus venenatis nisl vitae vestibulum. Praesent id nibh arcu. Vivamus sagittis accumsan felis, quis vulputate
-                            </p>
+                             
+                            
 
                             <p class="stext-117 cl6 p-b-26">
 
@@ -213,36 +218,144 @@
                         {{ csrf_field() }}
 
                     <div class="card">
+                        <div class="row">                           
+                            <div class="col-sm-4"><b class="product-title" style="color:blue;">Akses</b>
 
+                            <div class="block2-txt flex-w flex-t p-t-14">
+
+                                    <div class="block2-txt-child1 flex-col-l ">
+                                        <br>
+                                        
+                                        <b style="color: black;">1. Mudah dilalui kendaraan</b>
+                                        <b style="color: black;">2. Bebas dari banjir</b>
+                                        <b style="color: black;">3. Bebas dari polusi dan udara</b>
+                                        <b style="color: black;">4. Biaya tiket masuk terjangkau</b>
+                                        <b style="color: black;">5. Memiliki prasarana seperti jalan, jembatan, terminal dan stasiun</b>
+                                    </div>
+                            </div>
+
+                                </div>
+                            <div class="col-sm-4"><b class="product-title" style="color:blue;">Fasilitas</b>  
+                            <div class="block2-txt flex-w flex-t p-t-14">
+                                
+                                    <div class="block2-txt-child1 flex-col-l ">
+                                        <br>
+                                        
+                                       
+                                        <b style="color: black;">1. Memiliki toilet yang bersih dan wangi</b>
+                                        <b style="color: black;">2. Memiliki tempat santai yang nyaman</b>
+                                        <b style="color: black;">3. Memiliki tempat parkir yang memadai</b>
+                                        <b style="color: black;">4. Memiliki lahan terbuka</b>
+                                        <b style="color: black;">5. Memiliki fasilitas rekreasi hiburan</b>
+                                    </div>
+                            </div>
+                         
+                                </div>
+                                 <div class="col-sm-4"><b class="product-title" style="color:blue;">Atraksi</b>
+                               <div class="block2-txt flex-w flex-t p-t-14">
+                                  <div class="block2-txt-child1 flex-col-l ">
+                                        <br>
+                                        
+                                        <b style="color: black;">1. Memiliki keindahan</b>
+                                        <b style="color: black;">2. Memiliki kebudayaan</b>
+                                        <b style="color: black;">3. Memiliki keunikan</b>
+                                        <b style="color: black;">4. Mendapatkan kesenangan ketika berkunjung</b>
+                                        <b style="color: black;">5. Memiliki kenyamanan</b>
+                                    </div>
+                                </div>
+                                
+                                </div>
+                                
+                           
+                                </div>
+                               
+                                <br>
+                                <br>  
+                                
+                                    <div class="block2-txt-child1 flex-col-l ">
+                                        <a>
+                                        <span class="fa fa-star checked">&nbsp<b style="color: black;">Memenuhi satu point</b></span>
+                                        </a>
+
+                                    </div>
+                               
+                                
+                                    <div class="block2-txt-child1 flex-col-l ">
+                                        <a>
+                                        <span class="fa fa-star checked">
+                                        <span class="fa fa-star checked"></span>&nbsp<b style="color: black;">Memenuhi dua point</b></span>
+                                        </a>
+
+                                    </div>
+                                     <div class="block2-txt-child1 flex-col-l ">
+                                        <a>
+                                        <span class="fa fa-star checked">
+                                        <span class="fa fa-star checked">
+                                        <span class="fa fa-star checked"></span>&nbsp<b style="color: black;">Memenuhi tiga point</b></span>
+                                        </a>
+
+                                    </div>
+                                    <div class="block2-txt-child1 flex-col-l ">
+                                        <a>
+                                        <span class="fa fa-star checked">
+                                        <span class="fa fa-star checked">
+                                        <span class="fa fa-star checked">
+                                        <span class="fa fa-star checked"></span>&nbsp<b style="color: black;">Memenuhi empat point</b></span>
+                                        </a>
+
+                                    </div>
+                                    <div class="block2-txt-child1 flex-col-l ">
+                                        <a>
+                                        <span class="fa fa-star checked">
+                                        <span class="fa fa-star checked">
+                                        <span class="fa fa-star checked">
+                                        <span class="fa fa-star checked"></span>&nbsp<b style="color: black;">Memenuhi lima point</b></span>
+                                        </a>
+
+                                    </div>
+                                   
+                    
+                    <br>
+                    <br>
+                    <br>
+                                 
                         <div class="container-fliud">
 
                             <div class="wrapper row">
 
-                              
-
+                             
+                             
                                 <div class="details col-md-6">
                                     
                                     <h4 class="product-title" style="color: black;">Berikan Rating</h4>
 
+
                                     <div class="rating">
                                                             
                                         
-
+                                        <input type="hidden" name="id2" value="{{$wisata->id_wisata}}">
                                         <input type="hidden" name="id" required="" value="{{ $post->id }}">
                                         
                                         @if($post->jumlah_vote != 0)
                                         <b style="color: blue;">Akses</b>
+                                      
+                                    
                                         <input id="input-1" name="rate_fasilitas" class="rating rating-loading" data-min="0" data-max="5" data-step="1" data-size="xs"value="{{(float)$post->akses / $post->jumlah_vote}}">
                                         <b style="color: blue;">Fasilitas</b>
                                         <input id="input-1" name="rate_akses" class="rating rating-loading" data-min="0" data-max="5" data-step="1" data-size="xs" value="{{(float)$post->fasilitas / $post->jumlah_vote}}">
+                                        <b style="color: blue;">Atraksi</b>
+                                        <input id="input-1" name="rate_pelayanan" class="rating rating-loading" data-min="0" data-max="5" data-step="1" data-size="xs" value="{{(float)$post->pelayanan / $post->jumlah_vote}}">
+
                                         @else
                                         <b style="color: blue;">Akses</b>
                                         <input id="input-1" name="rate_akses" class="rating rating-loading" data-min="0" data-max="5" data-step="1" data-size="xs">
                                         <b style="color: blue;">Fasilitas</b>
                                         <input id="input-1" name="rate_fasilitas" class="rating rating-loading" data-min="0" data-max="5" data-step="1" data-size="xs">
+                                        <b style="color: blue;">Atraksi</b>
+                                        <input id="input-1" name="rate_pelayanan" class="rating rating-loading" data-min="0" data-max="5" data-step="1" data-size="xs">
                                         @endif
-
-                                        <input type="hidden" name="id" required="" value="{{ $post->id }}">
+<!-- 
+                                        <input type="hidden" name="id" required="" value="{{ $post->id }}"> -->
                                         
 
                                        
@@ -319,15 +432,12 @@
       <div class="modal-body">
         <form method="post" action="/forum/create" enctype="multipart/form-data">
         @csrf
-    <input type="hidden" name="id_wisata" value="{{$wisata->id_wisata}}">
+    <input type="hidden" name="id" value="{{$wisata->id_wisata}}">
   <div class="form-group">
-    <label for="judul">Judul</label>
-    <input type="text" class="form-control" name="judul"  placeholder="Isi Judul">
+    <input type="hidden" name="jenis" value="wisata">
+    <label for="judul">Komentar</label>
+    <textarea class="form-control" name="judul" rows="3" placeholder="Komentar Anda"></textarea>
    
-  </div>
-  <div class="form-group">
-    <label for="konten">Konten</label>
-    <textarea class="form-control" name="konten" rows="3" placeholder="Isi Konten"></textarea>
   </div>
   
   <button type="submit" class="btn btn-primary">Kirim</button>

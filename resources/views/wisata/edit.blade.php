@@ -27,6 +27,7 @@
 </div>
 <div class="mb-3">
   <label for="deskripsi" class="form-label">Deskripsi</label>
+  
   <input type="text" class="form-control" id="deskripsi" placeholder="Deskripsi" name="deskripsi" value="{{$wisata->deskripsi}}">
   
 </div>
